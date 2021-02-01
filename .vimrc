@@ -22,6 +22,8 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'wfxr/minimap.vim'
 Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'joonty/vim-phpqa.git'
+Plugin 'Yggdroot/indentLine'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -58,7 +60,9 @@ let NERDTreeShowHidden=1
 let g:debuggerPort = 9000
 let g:debuggerTimeout = 30
 let g:debuggerMaxDepth = 10
+set expandtab
 set tabstop=4
+set colorcolumn=85
 
 let g:minimap_auto_start=1
 let g:minimap_width=20
@@ -72,3 +76,8 @@ endfunction
 
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+autocmd VimEnter * NERDTree
+
+let g:indent_guides_enable_on_vim_startup = 1
+set list lcs=tab:\|\
